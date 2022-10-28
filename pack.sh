@@ -20,7 +20,7 @@ else
         mkdir -p ${release_dir}/${dir}
 
         if [ $dir != "public" ] || [ $public_release -eq 1 ]; then
-            tar --exclude style --exclude doc --transform "s,^,$archive_name/," -cjf ${release_dir}/${dir}/${archive_name}.tar.bz2 *
+            tar --exclude export-settings.user --exclude style --exclude doc --transform "s,^,$archive_name/," -cjf ${release_dir}/${dir}/${archive_name}.tar.bz2 *
         fi
 
         if [ $dir != "public" ] || [ $public_release -eq 1 ] || [ $public_doc_release -eq 1 ]; then

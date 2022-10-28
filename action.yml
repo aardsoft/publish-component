@@ -19,6 +19,10 @@ runs:
     - run: |
         mkdir -p ${{inputs.publish-directory}}
         mkdir -p ${{inputs.release-directory}}
+        mkdir -p doc
+        if ! [ -f export-settings.user ]; then
+          echo "(setq org-page-default-stylesheets t)" > export-settings.user
+        fi
       shell: bash
 
     - name: Setup SSH
